@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+    <title>Horsepower</title>
+    <script src="lib/angular.min.js"></script>
+    <script src="src/calc.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="css/app.css" rel="stylesheet">
+</head>
+<body>
+<div ng-controller="CalcCtrl" class="row-fluid">
+    <div class="span4 offset4 mainform">
+        <form class="form-horizontal">
+            <fieldset>
+                <legend>Dozens Calculator</legend>
+                <div class="control-group">
+                    <label for="pcs" class="control-label">Pieces:</label>
+
+                    <div class="controls">
+                        <input type="number" min="0" ng-model="qty.qty" id="pcs"/>
+                        <input type="range" min="0" max="120" ng-model="qty.qty"/>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label for="numOfDozens" class="control-label">Dozens:</label>
+
+                    <div class="controls">
+                        <input type="number" min="0" ng-model="qty.dozens" size="20" id="numOfDozens"/>
+                        <input type="range" min="0" max="10" ng-model="qty.dozens"/>
+                    </div>
+                </div>
+            </fieldset>
+            <p>Product: {{qty.product}}</p>
+        </form>
+    </div>
+</div>
+
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="lib/bootstrap.min.js"></script>
+<script src="lib/angular.min.js"></script>
+<script src="src/calc.js"></script>
+</body>
+</html>
