@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="calc">
 <head>
     <title>Horsepower</title>
     <script src="lib/angular.min.js"></script>
@@ -20,8 +20,8 @@
                     <label for="pcs" class="control-label">Pieces:</label>
 
                     <div class="controls">
-                        <input type="number" min="0" ng-model="qty.qty" id="pcs"/>
-                        <input type="range" min="0" max="120" ng-model="qty.qty"/>
+                        <input type="number" min="0" ng-model="qty.qty" ng-change="qty.setQty(qty.qty)"  id="pcs" name="pcs" />
+                        <input type="range" min="0" max="120" ng-model="qty.qty" ng-change="qty.setQty(qty.qty)" />
                     </div>
                 </div>
                 <div class="control-group">
@@ -33,7 +33,7 @@
                     </div>
                 </div>
             </fieldset>
-            <p>Product: {{qty.product}}</p>
+            <p>Product: {{qty.product | number}}</p>
         </form>
     </div>
 </div>
